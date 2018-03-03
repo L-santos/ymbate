@@ -15,9 +15,9 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        $threads = Thread::take(100)->get();
+        $threads = Thread::take(100)->paginate(10);
 
-        return $threads;
+        return view('index', ['threads' =>  $threads]);
     }
 
     /**
@@ -49,7 +49,7 @@ class ThreadController extends Controller
      */
     public function show(Page $page , Thread $thread)
     {
-        return $thread->page == $page? $thread : abort(404);
+        return $thread->page == $page? view('thread.show', ['thread' => $thread]) : abort(404);
     }
 
     /**

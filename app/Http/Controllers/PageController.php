@@ -15,10 +15,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        $sub = Page::first();
-        dd(\App\User::first()->subscriptions);
+        abort(404);
+        //return view('thread.list', ['pages' => $pages]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +25,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('page.create');
     }
 
     /**
@@ -48,7 +47,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        return $page;
+        return view('page.show', ['page' => $page]);
     }
 
     /**
