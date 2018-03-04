@@ -21,7 +21,7 @@
             @csrf
             <div class="form-group row">
                 <div class="col-sm-3">
-                    <label for="id">to r/*:</label>
+                    <label for="id">to p/*:</label>
                 </div>
                 <div class="col-sm-9">
                 <input id="page" type="text" name="page" class="form-control" value="{{ $page->id }}" required>

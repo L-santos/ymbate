@@ -26,7 +26,7 @@ Route::prefix('p')->group(function(){
     Route::patch('', 'PageController@update')->name('page.update');
 
     Route::get('{page}/{thread}/comments', 'ThreadController@show')->name('thread.show');
-    Route::get('{page}/submit', 'ThreadController@create')->name('thread.create');
+    Route::get('{page}/submit', 'ThreadController@create')->name('thread.create')->middleware('auth');
     Route::post('page/submit', 'ThreadController@store')->name('thread.store');
 
 });

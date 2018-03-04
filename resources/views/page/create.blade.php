@@ -50,15 +50,15 @@
                     </div>
                     <div class="col-sm-9">
                         <div class="form-check form-check">
-                            <input class="form-check-input" type="radio" name="type" id="typeRadio1" value="public" checked>
+                            <input class="form-check-input" type="radio" name="type" id="typeRadio1" value="1" checked>
                             <label class="form-check-label" for="typeRadio1">public</label>
                         </div>
                         <div class="form-check form-check">
-                            <input class="form-check-input" type="radio" name="type" id="typeRadio2" value="restricted">
+                            <input class="form-check-input" type="radio" name="type" id="typeRadio2" value="2">
                             <label class="form-check-label" for="typeRadio2">restricted</label>
                         </div>
                         <div class="form-check form-check">
-                            <input class="form-check-input" type="radio" name="type" id="typeRadio3" value="private">
+                            <input class="form-check-input" type="radio" name="type" id="typeRadio3" value="3">
                             <label class="form-check-label" for="typeRadio3">private</label>
                         </div>
                         <input type="submit" class="btn btn-purple">

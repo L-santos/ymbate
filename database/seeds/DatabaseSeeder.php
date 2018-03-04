@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
+        DB::table('types')->truncate();
         DB::table('comments')->truncate();
         DB::table('threads')->truncate();
         DB::table('pages')->truncate();
@@ -22,23 +23,10 @@ class DatabaseSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         
-        /**
-         * Seed Users table
-         */
-         factory(App\User::class, 20)->create();
-
-        /**
-         * Seed pages table
-         */
-        factory(App\Page::class, 10)->create()->each(function ($page){
-            $page->threads()->saveMany(
-                factory(App\Thread::class, rand(2, 20))->create()->each(
-                    function($thread)
-                    {
-                        $thread->comments()->saveMany(factory(App\Comment::class, rand(1, 15))->make());    
-                    }
-                )
-            );
-        });     
+        $this->call([
+            TypeSeeder::class,
+            UserSeeder::class,
+            PageSeeder::class,
+        ]);
     }
 }

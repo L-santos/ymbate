@@ -35,7 +35,26 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-           
+        $validateData = $request->validate(
+            [
+                'slug' => 'alpha_dash|required|max:25|unique:pages,id',
+                'title' => 'string|required|max:255',
+                'description' => 'string|nullable|max:255',
+                'type' => 'required|exists:types,id'
+            ]
+        );   
+
+        $page = new Page();
+        $page->id = $request->slug;
+        $page->title = $request->title;
+        $page->type_id = $request->type;
+        $page->description = $request->description;
+        $page->save();
+        
+        $page->users()->attach(auth()->user(), ['roles' => '["admin"]']);
+        $page->update();
+
+        return redirect()->route('page.show', ['page' => $page]);
     }
 
     /**

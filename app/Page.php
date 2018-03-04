@@ -15,7 +15,7 @@ class Page extends Model
     public $incrementing = false;
 
 
-    public $fillable = ['title', 'description', 'type'];
+    public $fillable = ['id', 'title', 'description', 'type_id'];
 
     public function threads()
     {
@@ -29,4 +29,8 @@ class Page extends Model
             ->withPivot('roles');
     }
 
+    public function type()
+    {
+        return $this->belongsTo('App\Type');
+    }
 }
