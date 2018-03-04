@@ -10,6 +10,11 @@ class Thread extends Model
 
     use SoftDeletes;
 
+
+    protected $fillable = [
+        'title', 'text', 'page_id', 'user_id'
+    ];
+
     /**
      * The attributes that should be mutated to dates.
      *

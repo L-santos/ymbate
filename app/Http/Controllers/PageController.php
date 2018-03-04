@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Page;
-//use App\User;
+use App\User;   
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -15,7 +15,6 @@ class PageController extends Controller
      */
     public function index()
     {
-        abort(404);
         //return view('thread.list', ['pages' => $pages]);
     }
     /**
@@ -36,7 +35,7 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        
+           
     }
 
     /**
@@ -45,8 +44,20 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
-    {
+    public function show(Request $request, Page $page)
+    {  
+        //Subscribe to a page
+        if($request->isMethod('post'))
+        {
+            $user = auth()->user();
+            if($page->users->contains($user))
+            {
+                $page->users()->detach($user);
+            }else{
+                $page->users()->attach($user, ['roles' => '["view"]' ]);
+            }
+        }
+
         return view('page.show', ['page' => $page]);
     }
 

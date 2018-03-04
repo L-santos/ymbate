@@ -54,7 +54,7 @@
                         {{ auth()->user()['username'] }}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="user-dropdown">
-                        <a href="{{ route('page.list', ['user' => auth()->user()['username'] ]) }}"
+                        <a href="{{ route('user.pages') }}"
                             class="dropdown-item small">@lang('page.my_pages')</a>
                         <a href="{{route('page.create')}}" class="dropdown-item small">@lang('page.create')</a>
                         <a class="dropdown-item small" href="{{ route('logout') }}"

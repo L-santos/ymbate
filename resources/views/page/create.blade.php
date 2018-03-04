@@ -20,16 +20,17 @@
                 @csrf
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="id">title*:</label>
+                        <label for="slug">slug*:</label>
                     </div>
                     <div class="col-sm-9">
-                        <input id="id" type="text" name="id" class="form-control" required>
-                        <small id="id" class="form-text text-muted">r/title</small>
+                        <input id="slug" type="text" name="slug" class="form-control" required>
+                        <small id="slug" class="form-text text-muted">p/slug</small>
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="title">name*:</label>
+                        <label for="title">title*:</label>
                     </div>
                     <div class="col-sm-9">
                         <input type="text" id="title" name="title" class="form-control" required>

@@ -14,7 +14,8 @@ class Page extends Model
     public $keyTipe = 'string';
     public $incrementing = false;
 
-    public $guarded = ['type'];
+
+    public $fillable = ['title', 'description', 'type'];
 
     public function threads()
     {

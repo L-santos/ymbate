@@ -25,9 +25,9 @@ class ThreadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Page $page)
     {
-        //
+        return view('thread.create', ['page' => $page]);
     }
 
     /**
@@ -38,7 +38,20 @@ class ThreadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'page' => 'required|exists:pages,id',
+            'title' => 'required|max:120',
+            'text' => 'nullable',
+        ]);
+
+        $thread = Thread::create([
+            'title' => $request->title,
+            'text' => $request->text,
+            'page_id' => $request->page,
+            'user_id' => auth()->user()->id,
+        ]);
+
+        return redirect()->route('thread.show', ['page' => $thread->page, 'thread' => $thread]);
     }
 
     /**

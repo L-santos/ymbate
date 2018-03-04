@@ -24,7 +24,7 @@
                     <label for="id">to r/*:</label>
                 </div>
                 <div class="col-sm-9">
-                <input id="id" type="text" name="id" class="form-control" value="{{ $page->id }}" required>
+                <input id="page" type="text" name="page" class="form-control" value="{{ $page->id }}" required>
                 </div>
             </div>
             <div class="form-group row">
