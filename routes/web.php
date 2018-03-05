@@ -32,5 +32,6 @@ Route::prefix('p')->group(function(){
 });
 
 Route::prefix('u')->group(function(){
-    Route::get('/subscriptions', 'UserController@pages')->name('user.pages');
+    Route::get('subscriptions', 'UserController@pages')->name('user.pages');
+    Route::get('{user}', 'UserController@show')->name('user.show');
 });

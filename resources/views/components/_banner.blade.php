@@ -10,6 +10,6 @@
     @endif
 </a>
 @endauth
-<p><small><em>1000 subscribers</em></small></p>
+<p><small><em>@lang('page.subs', ['count' => $page->users->count() ])</em></small></p>
 <span class="subscriber" hidden>@lang('subscribe')</span>
 <span class="subscriber" hidden>@lang('unsubscribe')</span>

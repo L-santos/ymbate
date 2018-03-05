@@ -3,29 +3,13 @@
 @section('content')
 <div>
     @auth
-    <ul class="nav small mb-3">
-        <li class="nav-item mr-0">
+    {{--  <ul class="nav small mb-3">  --}}
+        {{--  <li class="nav-item mr-0">
             <a href="" class="nav-link active">@lang('page.my_pages')</a>
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link pr-0">p/test</a>
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link pr-0">p/test</a>
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link pr-0">p/test</a>
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link pr-0">p/test</a>
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link pr-0">p/test</a>
-        </li>
-        <li class="nav-item">
-                <a href="" class="nav-link pr-0">p/test</a>
-        </li>
-    </ul>
+        </li>  --}}
+        {{--  list pages  --}}
+    {{--  </ul>  --}}
+    <div class="m-5"></div>
     @endauth
     @guest
         <div class="m-5"></div>
@@ -77,4 +61,15 @@
 <div>
     @yield('main')
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    $('#scroll').jscroll(
+        {
+            nextSelector: ".pagination .page-link[rel='next']",
+            contentSelector: '#scroll'
+        }
+    );
+</script>
 @endsection

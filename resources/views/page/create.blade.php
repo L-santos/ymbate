@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('banner') 
-    <small>create a new subraddit</small>
+    <strong>create a new page</strong>
 @endsection
 
 @section('main')
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="">Type*:</label>
+                        <label for="">type*:</label>
                     </div>
                     <div class="col-sm-9">
                         <div class="form-check form-check">
@@ -54,11 +54,11 @@
                             <label class="form-check-label" for="typeRadio1">public</label>
                         </div>
                         <div class="form-check form-check">
-                            <input class="form-check-input" type="radio" name="type" id="typeRadio2" value="2">
+                            <input class="form-check-input" type="radio" name="type" id="typeRadio2" value="2" disabled>
                             <label class="form-check-label" for="typeRadio2">restricted</label>
                         </div>
                         <div class="form-check form-check">
-                            <input class="form-check-input" type="radio" name="type" id="typeRadio3" value="3">
+                            <input class="form-check-input" type="radio" name="type" id="typeRadio3" value="3" disabled>
                             <label class="form-check-label" for="typeRadio3">private</label>
                         </div>
                         <input type="submit" class="btn btn-purple">

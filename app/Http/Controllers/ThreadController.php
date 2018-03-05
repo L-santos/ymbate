@@ -15,7 +15,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        $threads = Thread::take(100)->paginate(10);
+        $threads = Thread::take(100)->orderBy('created_at', 'desc')->paginate(10);
 
         return view('index', ['threads' =>  $threads]);
     }

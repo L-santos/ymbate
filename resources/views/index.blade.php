@@ -12,13 +12,3 @@
 </div>
 @endsection
 
-@section('scripts')
-<script>
-    $('#scroll').jscroll(
-        {
-            nextSelector: ".pagination .page-link[rel='next']",
-            contentSelector: '#scroll'
-        }
-    );
-</script>
-@endsection
