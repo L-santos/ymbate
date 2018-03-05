@@ -12,5 +12,8 @@
         'minutes' => 'minutes',
         'ago' => 'ago',
         'to' => 'to',
-        'points' => 'points'
+        'points' => 'points',
+        'delete' => 'delete',
+        'deleted' => 'deleted',
+        'removed' => 'removed',
     ];

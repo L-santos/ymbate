@@ -20,14 +20,17 @@
             </div>
             <hr>
     </div>
+    @auth
     <div class="row m-3">
-        <form class="col-md-6" action="">
+    <form class="col-md-6" action="{{ route('comment.store', ['thread' => $thread]) }}" method="POST">
+            @csrf
             <div class="form-group">
-                <textarea class="form-control form-control-sm" name="text" id="" cols="30" rows="10"style="height: 80px" disabled></textarea>
+                <textarea class="form-control form-control-sm" name="text" id="" cols="30" rows="10"style="height: 80px"></textarea>
             </div>
-            <input type="submit" class="btn btn-sm btn-purple" disabled>
+            <input type="submit" class="btn btn-sm btn-purple">
         </form>
     </div>
+    @endauth
     <di id="scroll">
         @foreach($thread->comments as $comment)
             @component('components._comment', ['comment' => $comment])

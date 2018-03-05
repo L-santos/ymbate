@@ -35,3 +35,6 @@ Route::prefix('u')->group(function(){
     Route::get('subscriptions', 'UserController@pages')->name('user.pages');
     Route::get('{user}', 'UserController@show')->name('user.show');
 });
+
+Route::post('{thread}', 'CommentController@store')->name('comment.store')->middleware('auth');
+Route::patch('', 'CommentController@remove')->name("comment.remove");

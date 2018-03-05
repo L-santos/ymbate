@@ -9,8 +9,13 @@
                 <span>|</span>
             {{ $comment->points . " " . __('page.points') }}
         </p>
-        <p class="card-text">
+        <p class="card-text mb-0">
             {{ $comment->text }}
         </p>
+        @if(auth()->user() == $comment->user)
+            <a class="small" href="#">
+                {{ __('page.delete') }}
+        </a>
+        @endif
     </div>
 </div>
